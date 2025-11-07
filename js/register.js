@@ -1,5 +1,5 @@
 console.log("Register.js loaded");
-const form = document.querySelector("form");
+const form = document.querySelector("#webform");
 
 const fornavnOutput = document.querySelector("#fornavn_output");
 const efternavnOutput = document.querySelector("#efternavn_output");
@@ -12,7 +12,7 @@ const kemailOutput = document.querySelector("#kemail_output");
 const ktelefonOutput = document.querySelector("#ktelefon_output");
 
 const elektronikOutput = document.querySelector("#elektronik_output");
-const betingelserOutput = document.querySelector("#betingelser_output");
+//const betingelserOutput = document.querySelector("#betingelser_output");
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -33,8 +33,8 @@ function handleSubmit(event) {
   kemailOutput.textContent = Formdata.get("kemail");
   ktelefonOutput.textContent = Formdata.get("ktelefon");
 
-  elektronikOutput.textContent = Formdata.get("elektronik");
-  betingelserOutput.textContent = Formdata.get("betingelser");
+  elektronikOutput.textContent = Formdata.getAll("elektronik").join(", ");
+  //betingelserOutput.textContent = Formdata.get("betingelser_output");
 
   form.reset();
 }

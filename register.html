@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/burger.css" />
     <link rel="stylesheet" href="css/cards.css" />
-    <link rel="stylesheet" href="css/form.css" />
+    <link rel="stylesheet" href="css/forms.css" />
     <link rel="icon" type="image/png" href="img/fav.png" />
     <title>Emergency Site</title>
   </head>
@@ -34,18 +34,110 @@
     </header>
 
     <main>
-      <h1>INDBERET</h1>
+      <h1>Find EKSTRA billig elektronik</h1>
       <section id="form-section">
         <article id="form-info">
-          <h2>Overskrift</h2>
-          <p>Tekst</p>
+          <h2>Modtag besked når elgiganter frasorterer og sælger ud</h2>
+          <h4>Skriv dig eller en pårørende op her</h4>
         </article>
-        <form id="webform"></form>
+        <form id="webform">
+          <legend><h4>Dine informationer</h4></legend>
+          <div class="formflex">
+            <div class="form-group">
+              <label for="first_name">Fornavn</label>
+              <input type="text" id="first_name" name="first_name" required />
+              <p class="error-message">Indsæt værdi</p>
+            </div>
+
+            <div class="form-group">
+              <label for="last_name">Efternavn</label>
+              <input type="text" id="last_name" name="last_name" required />
+              <p class="error-message">Indsæt værdi</p>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+            <p class="error-message">Indsæt værdi</p>
+          </div>
+
+          <div class="form-group">
+            <label for="telefon">Telefon</label>
+            <input type="telefon" id="telefon" name="telefon" required />
+            <p class="error-message">Indsæt værdi</p>
+          </div>
+
+          <legend>
+            <h4>Ikke mulighed for selv at modtage besked? <br />Tilføj kontaktperson her:</h4>
+          </legend>
+          <div class="formflex">
+            <div class="form-group">
+              <label for="kfirst_name">Fornavn</label>
+              <input type="text" id="kfirst_name" name="kfirst_name" />
+            </div>
+
+            <div class="form-group">
+              <label for="klast_name">Efternavn</label>
+              <input type="text" id="klast_name" name="klast_name" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="kemail">Email</label>
+            <input type="email" id="kemail" name="kemail" />
+          </div>
+
+          <div class="form-group">
+            <label for="ktelefon">Telefon</label>
+            <input type="tel" id="ktelefon" name="ktelefon" />
+          </div>
+        </form>
+
+        <form>
+          <fieldset>
+            <legend><h4 class="radio">Vælg hvilke produkter du ønsker besked om</h4></legend>
+            <label for="pc">
+              <input type="checkbox" name="elektronik" id="pc" value="pc" />
+              PC og bærbar
+            </label>
+            <label for="mobil">
+              <input type="checkbox" name="elektronik" id="mobil" value="mobil" />
+              Mobil og tablet
+            </label>
+            <label for="tv">
+              <input type="checkbox" name="elektronik" id="tv" value="tv" />
+              TV
+            </label>
+            <label for="alle">
+              <input type="checkbox" name="elektronik" id="alle" value="alle" />
+              Alle
+            </label>
+          </fieldset>
+
+          <button>Sign up</button>
+        </form>
       </section>
       <section id="form-summary">
-        <h2>Summary</h2>
         <article>
-          <p class="placeholder">Opsummering</p>
+          <h2 class="placeholder">Opsummering</h2>
+          <div>
+            <h3>Dine informationer:</h3>
+            <p>Fornavn: <span id="fornavn_output"></span></p>
+            <p>Efternavn: <span id="efternavn_output"></span></p>
+            <p>Email: <span id="email_output"></span></p>
+            <p>Telefon: <span id="telefon_output"></span></p>
+          </div>
+          <div class="kontaktperson-summary">
+            <h3>Kontaktperson:</h3>
+            <p>Fornavn: <span id="kfornavn_output"></span></p>
+            <p>Efternavn: <span id="kefternavn_output"></span></p>
+            <p>Email: <span id="kemail_output"></span></p>
+            <p>Telefon: <span id="ktelefon_output"></span></p>
+          </div>
+          <div class="produktogbetingelser-summary">
+            <p>Ønsket elektronik: <span id="elektronik_output"></span></p>
+            <p>Betingelser accepteret: <span id="betingelser_output"></span></p>
+          </div>
         </article>
       </section>
     </main>
@@ -76,6 +168,6 @@
       </nav>
     </footer>
     <script src="js/burger.js"></script>
-    <!-- <script src="js/main.js"></script> -->
+    <script src="js/register.js"></script>
   </body>
 </html>

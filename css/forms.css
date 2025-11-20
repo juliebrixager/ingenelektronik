@@ -1,156 +1,158 @@
-#webform {
-  background-color: var(--form-background-color);
-}
-
-#form-section,
-#form-summary {
-  background-color: var(--info-background-color);
-  padding: 0;
-}
-#form-summary h2 {
-  line-height: 3rem;
-  text-align: center;
-  background-color: var(--headline-bg-color-inverted);
-  color: var(--headline-color-inverted);
-  padding-top: 5px;
-}
-#form-summary h3 {
-  font-size: 0.8rem;
-  line-height: 0.8rem;
-  font-weight: 600;
-  margin: 0;
-  padding: 0;
-}
-#form-summary > *:not(:first-child) {
-  margin: 0 clamp(1rem, 10%, 7rem);
-}
-#form-summary p {
-  font-size: 0.8rem;
-  line-height: 1.3;
-  margin: 0 0 1.2rem 0;
-  padding: 0;
-}
-
-/* Min form css*/
-
-input {
-  border: 1px solid #000000;
-  padding: 0.25rlh;
-  border-radius: 6px;
-  box-shadow: 0px 1px 2px #0001;
-  background-color: rgba(255, 255, 255, 0.586);
-}
-
-button {
-  border: 1px solid #ffffff;
-  background-color: #6f90eb;
-  color: #fff;
-  border-radius: 6px;
-  padding: 0.25rlh 0.5rlh;
-  cursor: pointer;
-}
-
-button:active {
-  scale: 0.98;
-}
-button:hover {
-  background: #6f90ebd4;
-}
-
-.error-message {
-  color: red;
-}
-
-/* Form layout */
-form {
-  display: grid;
-  gap: 1rlh;
-  padding: 1rlh;
-  accent-color: #6f90eb;
-
-  .form-group {
-    display: grid;
-    gap: 0.1rlh;
-    flex: 1;
+:root {
+  #webform {
+    background-color: var(--form-background-color);
   }
 
-  .form-group:has(:required) {
-    label::after {
-      content: " *";
-      color: red;
+  #form-section,
+  #form-summary {
+    background-color: var(--info-background-color);
+    padding: 0;
+  }
+  #form-summary h2 {
+    line-height: 3rem;
+    text-align: center;
+    background-color: var(--headline-bg-color-inverted);
+    color: var(--headline-color-inverted);
+    padding-top: 5px;
+  }
+  #form-summary h3 {
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+  }
+  #form-summary > *:not(:first-child) {
+    margin: 0 clamp(1rem, 10%, 7rem);
+  }
+  #form-summary p {
+    font-size: 0.8rem;
+    line-height: 1.3;
+    margin: 0 0 1.2rem 0;
+    padding: 0;
+  }
+
+  /* Min form css*/
+
+  input {
+    border: 1px solid #000000;
+    padding: 0.25rlh;
+    border-radius: 6px;
+    box-shadow: 0px 1px 2px #0001;
+    background-color: rgba(255, 255, 255, 0.586);
+  }
+
+  button {
+    border: 1px solid #ffffff;
+    background-color: #db0000;
+    color: #fff;
+    border-radius: 6px;
+    padding: 0.25rlh 0.5rlh;
+    cursor: pointer;
+  }
+
+  button:active {
+    scale: 0.98;
+  }
+  button:hover {
+    background: #6f90ebd4;
+  }
+
+  .error-message {
+    color: #ff0000;
+  }
+
+  /* Form layout */
+  form {
+    display: grid;
+    gap: 1rlh;
+    padding: 1rlh;
+    accent-color: #c60000;
+
+    .form-group {
+      display: grid;
+      gap: 0.1rlh;
+      flex: 1;
+    }
+
+    .form-group:has(:required) {
+      label::after {
+        content: " *";
+        color: #ff0000;
+      }
     }
   }
-}
-/* Tilføj rød kant omkring input-feltet, hvis det er ugyldigt */
-.form-group:has(:user-invalid) {
-  input {
-    outline: 3px solid #f005;
-    border-color: darkred;
+  /* Tilføj rød kant omkring input-feltet, hvis det er ugyldigt */
+  .form-group:has(:user-invalid) {
+    input {
+      outline: 3px solid #f005;
+      border-color: darkred;
+    }
+    /* Vis fejlmeddelelsen, hvis feltet er ugyldigt */
+    .error-message {
+      display: block;
+    }
   }
-  /* Vis fejlmeddelelsen, hvis feltet er ugyldigt */
-  .error-message {
-    display: block;
+
+  label:has(input) {
+    display: flex;
+    align-items: center;
+    gap: 0.25rlh;
+    justify-self: start;
   }
-}
 
-label:has(input) {
-  display: flex;
-  align-items: center;
-  gap: 0.25rlh;
-  justify-self: start;
-}
-
-fieldset {
-  color: #000000;
-  border-color: #7d7d7d;
-  padding: 1rlh;
-  gap: 1rlh;
-  border: 1px solid #000000;
-  border-radius: 6px;
-  box-shadow: 0px 1px 2px #0001;
-}
-
-#telefon {
-  width: calc(50% - 20px + 00.25rlh);
-}
-
-h4:not(.radio) {
-  margin-top: 40px;
-}
-
-.formflex {
-  display: flex;
-  gap: 20px;
-}
-
-#form-summary {
-  background-color: white;
-  margin-bottom: 100px;
-  p {
-    font-size: 17px;
-    margin-top: 20px;
-    padding: 15px;
-    padding-left: 30px;
+  fieldset {
+    color: light-dark(#000000, #ffffff);
+    border-color: #7d7d7d;
+    padding: 1rlh;
+    gap: 1rlh;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    box-shadow: 0px 1px 2px #0001;
   }
-  h2 {
-    padding: 15px;
-    margin-top: 20px;
-    margin-bottom: 23px;
-    font-size: 30px;
-  }
-  h3 {
-    font-size: 20px;
-    padding-left: 30px;
-  }
-}
 
-.kontaktperson-summary {
-  margin-top: 70px;
-}
+  #telefon {
+    width: calc(50% - 20px + 00.25rlh);
+  }
 
-.produktogbetingelser-summary {
-  margin-top: 70px;
-  p {
-    font-weight: 600;
+  h4:not(.radio) {
+    margin-top: 40px;
+  }
+
+  .formflex {
+    display: flex;
+    gap: 20px;
+  }
+
+  #form-summary {
+    background-color: light-dark(white, #121212cc);
+    margin-bottom: 100px;
+    p {
+      font-size: 17px;
+      margin-top: 20px;
+      padding: 15px;
+      padding-left: 30px;
+    }
+    h2 {
+      padding: 15px;
+      margin-top: 20px;
+      margin-bottom: 23px;
+      font-size: 30px;
+    }
+    h3 {
+      font-size: 20px;
+      padding-left: 30px;
+    }
+  }
+
+  .kontaktperson-summary {
+    margin-top: 70px;
+  }
+
+  .produktogbetingelser-summary {
+    margin-top: 70px;
+    p {
+      font-weight: 600;
+    }
   }
 }

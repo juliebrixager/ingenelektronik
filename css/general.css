@@ -53,6 +53,7 @@ h1 {
   line-height: 1.5rem;
 }
 
+
 .sub {
   font-size: var(--font-sub1-size);
   font-weight: var(--font-weight-light);
@@ -111,7 +112,7 @@ nav a {
 header nav li a {
   margin: 1.5rem;
   background-color: var(--color-link-bg);
-  color: var(--color-text);
+  color: var(--color-link-text);
   font-size: var(--followup-text-size);
   padding: 0.5rem 1rem;
   border-radius: var(--border-radius-links);
@@ -131,7 +132,24 @@ nav a:active {
   background-color: var(--color-link-active);
 }
 
+#toggle {
+  border: none;
+  background: var(--color-link-bg);
+  color: var(--color-link-text);
+  text-box: cap alphabetic;
+  padding: 1cap;
+  padding-left: 0.5cap;
+  padding-right: 0.5cap;
+  border-radius: 15px;
+  display: block;
+  cursor: pointer;
+}
+
 /* FOOTER */
 footer a {
-  font-size: 0.7rem;
+  font-size: 10px;
+}
+
+.damnit p {
+  font-size: 14px;
 }

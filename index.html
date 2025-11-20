@@ -13,13 +13,16 @@
     <link rel="stylesheet" href="css/cards.css" />
     <link rel="stylesheet" href="css/forside.css" />
     <link rel="icon" type="image/png" href="img/fav.png" />
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
     <title>Emergency Site</title>
   </head>
   <body id="frontpage">
     <header>
       <nav>
         <div id="logotype-wrapper" class="logo">
-          <a href="index.html"> LOGO-TYPE </a>
+          <a href="index.html">
+            <img src="img/rødtlogo.svg" alt="" />
+          </a>
         </div>
         <ul class="menu">
           <li><a class="menuItem" href="instruction.html">Nærkontakt </a></li>
@@ -30,14 +33,15 @@
           <span class="line"></span>
           <span class="line"></span>
         </button>
+        <button id="toggle">Gå til darkmode</button>
       </nav>
     </header>
     <section id="main-disclamer">
       <div id="main-disclamer-content">
-        <img src="warning" alt="ICON" />
+        <img class="ikon" src="img/ikon.svg" alt="ICON" />
         <div>
-          <h1>OVERSKRIFT</h1>
-          <p class="sub">Underrubrik</p>
+          <h1>UHELD PÅ ELEKTRONIKFRONTEN?</h1>
+          <p class="sub">Dit site til hjælp og rådgivning</p>
         </div>
       </div>
     </section>
@@ -174,32 +178,13 @@
     </main>
 
     <footer>
-      <nav class="some">
-        <ul>
-          <li><a href="">link</a></li>
-          <li><a href="">link</a></li>
-          <li><a href="">link</a></li>
-          <li><a href="">link</a></li>
-        </ul>
-      </nav>
-      <nav class="another">
-        <ul>
-          <li><a href="">link</a></li>
-          <li><a href="">link</a></li>
-          <li><a href="">link</a></li>
-          <li><a href="">link</a></li>
-        </ul>
-      </nav>
-      <nav class="yetanother">
-        <ul>
-          <li><a href="">link</a></li>
-          <li><a href="">link</a></li>
-          <li><a href="">link</a></li>
-          <li><a href="">link</a></li>
-        </ul>
-      </nav>
+      <section class="footer">
+        <div class="damnit">
+          <p>Damn it &copy;</p>
+        </div>
+      </section>
     </footer>
     <script src="js/burger.js"></script>
-    <!-- <script src="js/main.js"></script> -->
+    <script src="js/main.js"></script>
   </body>
 </html>
